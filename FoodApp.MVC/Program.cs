@@ -1,11 +1,17 @@
-using FoodApp.DAL;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+using FoodApp.BLL.Implementation;
+using FoodApp.BLL.Interface;
+using FoodApp.DAL.Entities;
+using FoodApp.DAL.Repository;
+using FoodApp.DAL.Seeds;
+
 
 namespace FoodApp.MVC
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -14,12 +20,19 @@ namespace FoodApp.MVC
 
             builder.Services.AddDbContext<FoodAppDbContext>(opts =>
             {
-                
+
                 var defaultConnString = builder.Configuration.GetSection("ConnectionString")["DefaultConnString"];
 
                 opts.UseSqlServer(defaultConnString);
 
             });
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork<FoodAppDbContext>>();
+            //builder.Services.AddScoped<IUserService, UserService>();//todo: show other life-cycles
+            builder.Services.AddScoped<IMenuOperations, MenuOperations>();//todo: show other life-cycles
+            builder.Services.AddAutoMapper(Assembly.Load("FoodApp.BLL"));
+           
+
 
             var app = builder.Build();
 
@@ -42,7 +55,9 @@ namespace FoodApp.MVC
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            app.Run();
+            await SeedData.EnsurePopulatedAsync(app);
+
+            await app.RunAsync();
         }
     }
 }

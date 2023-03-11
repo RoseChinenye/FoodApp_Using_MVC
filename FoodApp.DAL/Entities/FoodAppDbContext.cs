@@ -1,7 +1,6 @@
-﻿using FoodApp.DAL.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace FoodApp.DAL
+namespace FoodApp.DAL.Entities
 {
     public class FoodAppDbContext : DbContext
     {
@@ -45,14 +44,14 @@ namespace FoodApp.DAL
                 m.Property(m => m.Title)
                 .IsRequired()
                 .HasMaxLength(50);
-                
+
                 m.Property(m => m.Price)
                 .IsRequired()
                 .HasPrecision(18, 2);
 
                 m.Property(m => m.Picture)
                 .IsRequired(false);
- 
+
                 m.Property(m => m.Description)
                 .IsRequired()
                 .HasMaxLength(100);
@@ -65,9 +64,9 @@ namespace FoodApp.DAL
                 .IsRequired()
                 .HasMaxLength(50);
             });
-                
 
-            
+
+
             base.OnModelCreating(modelBuilder);
         }
     }

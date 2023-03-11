@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodApp.DAL.Migrations
 {
     [DbContext(typeof(FoodAppDbContext))]
-    [Migration("20230309223802_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20230310154835_DBMigration")]
+    partial class DBMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

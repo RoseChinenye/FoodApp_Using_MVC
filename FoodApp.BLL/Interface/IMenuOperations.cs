@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using FoodApp.BLL.Models;
 using System.Threading.Tasks;
 
 namespace FoodApp.BLL.Interface
 {
     public interface IMenuOperations
     {
-        void AddFoodItem();
-        void UpdateFoodItem();
+        Task<(bool IsSuccessful, string message)> AddOrUpdateFoodItemAsync(AddOrUpdateFoodItemVM VisualModel);
         void DeleteFoodItem();
+        void ViewFoodItem();
         void ViewMenu();
-        
+
     }
 }

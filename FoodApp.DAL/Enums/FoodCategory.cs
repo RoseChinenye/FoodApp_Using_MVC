@@ -2,6 +2,6 @@
 {
     public enum FoodCategory
     {
-        Breakfast, Lunch, Dinner
+        Rice, Beans, Swallow, Fries, Others
     }
 }
