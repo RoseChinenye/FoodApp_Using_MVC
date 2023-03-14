@@ -4,6 +4,7 @@ using FoodApp.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodApp.DAL.Migrations
 {
     [DbContext(typeof(FoodAppDbContext))]
-    partial class FoodAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230312223303_UpdatedAnother-Migration")]
+    partial class UpdatedAnotherMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,8 +102,8 @@ namespace FoodApp.DAL.Migrations
                     b.Property<int?>("AdminId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Category")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Category")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()

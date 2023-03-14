@@ -4,6 +4,7 @@ using FoodApp.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodApp.DAL.Migrations
 {
     [DbContext(typeof(FoodAppDbContext))]
-    partial class FoodAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230311223244_UpdatedEntity")]
+    partial class UpdatedEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,8 +102,11 @@ namespace FoodApp.DAL.Migrations
                     b.Property<int?>("AdminId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Category")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Category")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -122,6 +128,8 @@ namespace FoodApp.DAL.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AdminId");
+
+                    b.HasIndex("CustomerId");
 
                     b.ToTable("Menu");
                 });
@@ -160,6 +168,10 @@ namespace FoodApp.DAL.Migrations
                     b.HasOne("FoodApp.DAL.Entities.Admin", null)
                         .WithMany("Menu")
                         .HasForeignKey("AdminId");
+
+                    b.HasOne("FoodApp.DAL.Entities.Customer", null)
+                        .WithMany("Menu")
+                        .HasForeignKey("CustomerId");
                 });
 
             modelBuilder.Entity("FoodApp.DAL.Entities.Order", b =>
@@ -186,6 +198,8 @@ namespace FoodApp.DAL.Migrations
 
             modelBuilder.Entity("FoodApp.DAL.Entities.Customer", b =>
                 {
+                    b.Navigation("Menu");
+
                     b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618

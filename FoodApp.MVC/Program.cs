@@ -21,14 +21,13 @@ namespace FoodApp.MVC
             builder.Services.AddDbContext<FoodAppDbContext>(opts =>
             {
 
-                var defaultConnString = builder.Configuration.GetSection("ConnectionString")["DefaultConnString"];
+                var defaultConnString = builder.Configuration.GetSection("ConnectionString")["DefaultConn"];
 
                 opts.UseSqlServer(defaultConnString);
 
             });
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork<FoodAppDbContext>>();
-            //builder.Services.AddScoped<IUserService, UserService>();//todo: show other life-cycles
             builder.Services.AddScoped<IMenuOperations, MenuOperations>();//todo: show other life-cycles
             builder.Services.AddAutoMapper(Assembly.Load("FoodApp.BLL"));
            

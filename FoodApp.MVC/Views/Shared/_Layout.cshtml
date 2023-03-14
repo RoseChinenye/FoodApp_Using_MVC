@@ -3,31 +3,41 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - FoodApp.MVC</title>
+    <title>@ViewData["Title"] - Tachie nke bu Osa</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/FoodApp.MVC.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FoodApp.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav>
+            <div class="logo">
+                <h3 asp-area="" asp-controller="Home" asp-action="Index">Tachie nke bu Osa</h3>
             </div>
+
+            <ul class="navlinks">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Menu" asp-action="Index">Menu</a>
+                </li>
+            </ul>
+
+            <div class="nav-icons">
+                <a asp-area="" asp-controller="" asp-action="Index"><i class="fa fa-search"></i></a>
+                <a asp-area="" asp-controller="" asp-action="Index"><i class="fa fa-shopping-cart"></i></a>
+            </div>
+
+            <div class="sign-in">
+                <a asp-area="" asp-controller="" asp-action="Index">Sign In</a>
+            </div>
+
+                
+            <button asp-area="" asp-controller="" asp-action="Index">Create Account</button>
+                
         </nav>
     </header>
     <div class="container">
@@ -36,11 +46,51 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - FoodApp.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+   @* <footer class="border-top footer text-muted">
+        <div class="footer-section">
+
+            <div class="top-footer">
+
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Logo image">
+                    <span class="logo-name">Meals</span>
+                </div>
+
+                <div class="columns">
+                    <div class="column1">
+                        <ul class="footer-navlinks">
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="column2">
+                        <ul class="footer-navlinks">
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Our Menu</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-media">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+
+            <hr>
+
+
         </div>
-    </footer>
+        <div class="container">
+            &copy; 2023 - Tachie nke bu Osa - All Rights Reserved
+        </div>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

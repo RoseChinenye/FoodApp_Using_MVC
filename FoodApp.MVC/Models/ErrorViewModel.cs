@@ -1,4 +1,4 @@
-namespace FoodApp.MVC.Models
+﻿namespace FoodApp.MVC.Models
 {
     public class ErrorViewModel
     {

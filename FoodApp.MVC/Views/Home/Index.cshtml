@@ -1,8 +1,344 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@*@{
+    ViewData["Title"] = "Tachie nke bu Osa";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body>
+
+    <section>
+        <!-- Beginning of description-section -->
+
+        <div class="description-section">
+            <h1>Delicious meals at your convenience</h1>
+            <p>Order your meals from us and we will have it delivered at your doorstep.</p>
+
+            <div class="inst-orders">
+                <p>Instant Order</p>
+                <input type="text" name="search" class="search" 
+                placeholder="&#xF002; Search for meal" style="font-family: Arial, FontAwesome"/>
+            </div>
+
+            <button>Get Started</button>
+            <img src="~/images/image1.png" alt="Jellof Rice with Chicken" asp-append-version="true"/>
+            <a href="#"><i class="fas fa-sms"></i></a>
+        </div>
+
+        <!-- End of description-section -->
+
+        <!-- Beginning of menu-section -->
+        <div class="menu-section">
+            <div class="menu-head">
+                <h3>MENU</h3>
+                <p>Current Menu</p>
+                <ul class="menu-categories">
+                    <a href="#"><li>All</li></a>
+                    <a href="#"><li>Rice</li></a>
+                    <a href="#"><li>Beans</li></a>
+                    <a href="#"><li>Fries</li></a>
+                    <a href="#"><li>Swallow</li></a>
+                    <a href="#"><li>Others</li></a>
+                </ul>
+            </div>
+            <div class="menus">
+
+                <div class="menu-column">
+                    <div class="single-menu">
+                        <img src="images/image2.png" alt="Jellof rice">
+                        <div class="menu-content">
+                            <h5>Jellof Rice and Chicken</h5>
+                            <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
+                            <h4> ₦ 1,500 <span class="carts">
+                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                            </span></h4>
+                        </div>
+                    </div>
+
+                <div class="single-menu">
+                        <img src="images/image5.png" alt="Swallow with Egusi Soup">
+                        <div class="menu-content">
+                            <h5>Swallow with Egusi Soup</h5>
+                            <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
+                            <h4> ₦ 1000 <span class="carts">
+                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                            </span></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-column">
+                    <div class="single-menu">
+                            <img src="images/image3.png" alt="Swallow with Draw Soup">
+                            <div class="menu-content">
+                                <h5>Swallow with Draw Soup</h5>
+                                <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
+                                <h4> ₦ 1000 <span class="carts">
+                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                </span></h4>
+                            </div>
+                        </div>
+
+                    <div class="single-menu">
+                        <img src="images/image6.png" alt="Beans">
+                        <div class="menu-content">
+                            <h5>Beans</h5>
+                            <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
+                            <h4> ₦ 700 <span class="carts">
+                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                            </span></h4>
+                        </div>
+                        </div>
+                </div>
+
+                <div class="menu-column">
+                    <div class="single-menu">
+                            <img src="images/image4.png" alt="Fries with Egg Sauce">
+                            <div class="menu-content">
+                                <h5>Fries with Egg Sauce</h5>
+                                <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
+                                <h4> ₦ 1,500 <span class="carts">
+                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                </span></h4>
+                            </div>
+                        </div>
+
+                    <div class="single-menu">
+                            <img src="images/image7.png" alt="Fried Rice">
+                            <div class="menu-content">
+                                <h5>Fried Rice</h5>
+                                <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
+                                <h4> ₦ 600 <span class="carts">
+                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                </span></h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <center>
+                <button>Full Menu</button>
+                </center>
+            </div>
+
+            <!-- End of Menu-section -->
+
+            <!-- Beginning of testimonial-section -->
+            <div class="testimonial-section">
+                <div class="section-description">
+                    <h3>What our customers say about us</h3>
+                    <p>At vero eos et accusamus et iusto odio 
+                        dignissimos ducimus qui blanditiis 
+                        praesentium voluptatum.
+                    </p>
+                </div>
+
+                <div class="testimonials">
+                    <span class="quote">,,</span>
+                <div class="left-content">
+                    <div class="img-area">
+                            <img src="images/John.png" alt="john Samson">
+                        </div>
+                        <div class="text-area">
+                            <div class="name">
+                                <h2>John Samson</h2>
+                            </div>
+
+                            <h3>Enugu, Nigeria</h3>
+                        </div>
+                </div>
+                <div class="right-content">
+
+                    <p>White dwarf a still more glorious dawn awaits tingling 
+                        of the spine emerged into consciousness Vangelis shores 
+                        of the cosmic ocean. 
+                        Tendrils of gossamer clouds kindling the energy hidden 
+                        in matter concept of the number one permanence.
+                    </p>
+                </div>
+            </div>
+            <div class="testimonials">
+                <span class="quote">,,</span>
+            <div class="left-content">
+                <div class="img-area">
+                        <img src="images/John.png" alt="Rose Newton">
+                    </div>
+                    <div class="text-area">
+                        <div class="name">
+                            <h2>Rose Newton</h2>
+                        </div>
+
+                        <h3>Port Harcourt, Nigeria</h3>
+                    </div>
+            </div>
+            <div class="right-content">
+
+                <p>White dwarf a still more glorious dawn awaits tingling 
+                    of the spine emerged into consciousness Vangelis shores 
+                    of the cosmic ocean. 
+                </p>
+            </div>
+        </div>
+        <div class="testimonials">
+            <span class="quote">,,</span>
+        <div class="left-content">
+            <div class="img-area">
+                    <img src="images/John.png" alt="Glad Johnson">
+                </div>
+                <div class="text-area">
+                    <div class="name">
+                        <h2>Glad Johnson</h2>
+                    </div>
+
+                    <h3>Asaba, Nigeria</h3>
+                </div>
+        </div>
+        <div class="right-content">
+
+            <p>White dwarf a still more glorious dawn awaits tingling 
+                of the spine emerged into consciousness Vangelis shores 
+                of the cosmic ocean. 
+                Tendrils of gossamer clouds kindling the energy hidden 
+                in matter concept of the number one permanence.
+            </p>
+        </div>
+    </div>
+
+    <div class="testimonials">
+            <span class="quote">,,</span>
+        <div class="left-content">
+            <div class="img-area">
+                    <img src="images/John.png" alt="Ifeanyi Ezeobi">
+                </div>
+                <div class="text-area">
+                    <div class="name">
+                        <h2>Ifeanyi Ezeobi</h2>
+                    </div>
+
+                    <h3>Anambra, Nigeria</h3>
+                </div>
+        </div>
+        <div class="right-content">
+
+            <p>
+                Tendrils of gossamer clouds kindling the energy hidden 
+                in matter concept of the number one permanence.
+                Tendrils of gossamer clouds kindling the energy hidden 
+                in matter concept of the number one permanence.
+            </p>
+        </div>
+    </div>
+    <div class="testimonials">
+            <span class="quote">,,</span>
+        <div class="left-content">
+            <div class="img-area">
+                    <img src="images/John.png" alt="Okon Benson">
+                </div>
+                <div class="text-area">
+                    <div class="name">
+                        <h2>Okon Benson</h2>
+                    </div>
+
+                    <h3>Lagos, Nigeria</h3>
+                </div>
+        </div>
+        <div class="right-content">
+
+            <p>White dwarf a still more glorious dawn awaits tingling 
+                of the spine emerged into consciousness Vangelis shores 
+                of the cosmic ocean. 
+            </p>
+        </div>
+    </div>
+
+                <div class="all-dots">
+                <span class="dots" onclick="activeSlide(1)"></span>
+                <span class="dots" onclick="activeSlide(2)"></span>
+                <span class="dots" onclick="activeSlide(3)"></span>
+                <span class="dots" onclick="activeSlide(4)"></span>
+                <span class="dots" onclick="activeSlide(5)"></span>
+                </div>
+
+
+            </div>
+            <!-- End of description-section -->
+
+            <!-- Beginning of blog-section -->
+
+            <div class="blog-section">
+                <div class="section-title">
+                    <center>
+                    <h2>Blog Our Latest News</h2>
+                    </center>
+                    <p>Have you ever browsed food blogs 
+                        like mine and wondered how to start 
+                        a food blog of your very own? 
+                    </p>
+                </div>
+
+                <div class="blogs">
+
+                    <div class="blogs-column">
+
+                        <div class="blog-img">
+                            <img src="images/image8.png" alt="Pao Chicken">
+                        </div>
+                        <div class="blog-content">
+                            <div class="content-title">
+                                <span class="category">Design</span>
+                                <span class="date">01 October 2019</span>
+                            </div>
+                            <h5>Better Than Takeout Kung Pao Chicken</h5>
+                            <p>This spicy, tangy, and sweet better than takeout 
+                                no peanut kung pao chicken stir fry recipe 
+                            </p>
+                            <a href="#">READ MORE</a>
+                        </div>
+
+                    </div>
+
+                    <div class="blogs-column">
+
+                        <div class="blog-img">
+                            <img src="images/image9.png" alt="Broccoli Salad">
+                        </div>
+                        <div class="blog-content">
+                            <div class="content-title">
+                                <span class="category">Design</span>
+                                <span class="date">01 October 2019</span>
+                            </div>
+                            <h5>The Best Sesame Soy Broccoli Salad</h5>
+                            <p>Hello broccoli salad! Broccoli salad with a sweet and 
+                                tangy dressing is my new go to for summer parties. 
+                            </p>
+                            <a href="#">READ MORE</a>
+                        </div>
+
+                    </div>
+
+                        <div class="blogs-column">
+
+                            <div class="blog-img">
+                                <img src="images/image10.png" alt="Pao Chicken" class="last-img">
+                            </div>
+                            <div class="blog-content">
+                                <div class="content-title">
+                                    <span class="category">Design</span>
+                                    <span class="date">01 October 2019</span>
+                                </div>
+                                <h5>Better Than Takeout Kung Pao Chicken</h5>
+                                <p>This super easy version of dan dan noodles is fast, 
+                                    flavorful, and vegetarian to boot. It’s definitely  
+                                </p>
+                                <a href="#">READ MORE</a>
+                            </div>
+
+                        </div>
+
+                </div>
+
+
+            </div>
+
+    </section>
+   
+</body>
+*@
