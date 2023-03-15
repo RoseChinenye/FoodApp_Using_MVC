@@ -1,0 +1,121 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Lato&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Inter:wght@500&family=Lato&family=Poppins&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+nav {
+    width: 100%;
+    top: 0px;
+    display: flex;
+    position: absolute;
+    z-index: 1000;
+    justify-content: space-between;
+    padding: 1rem 10rem;
+    height: 90px;
+    background: #FFF;
+    box-shadow: 2px 2px 12px rgb(221, 210, 210);
+}
+
+logo h3 {
+   
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22.1538px;
+    line-height: 160%;
+    letter-spacing: 0.004em;
+    color: #1A1A1A;
+}
+
+
+ul.navlinks {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin: 6% 1vw;
+    list-style: none;
+    font-size: 1.1rem;
+}
+
+.navlinks a {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    text-decoration: none;
+    letter-spacing: 0.004em;
+    color: #666666;
+}
+
+.navlinks a:hover {
+    color: #DA3743;
+    padding: 0.5rem;
+}
+
+.navlinks a:hover::before {
+        content: ' ';
+        position: absolute;
+        width: 15px;
+        height: 2px;
+        background-color: #DA3743;
+        margin: 20px 0 0 8px;
+        transform: translateX(-50%);
+}
+
+.nav-icons {
+    margin: 2.5% 10%;
+}
+
+.nav-icons a {
+    text-decoration: none;
+    color: #666666;
+    justify-content: space-around;
+    margin: 0 0.5vw;
+}
+
+.sign-in {
+    margin: 2.5% 0%;
+}
+
+.sign-in a {
+    text-decoration: none;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.004em;
+    color: #666666;
+    margin: 0 1vw;
+}
+
+button {
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    color: #FFF;
+    border: none;
+    width: 157px;
+    height: 54px;
+    outline: none;
+    background: #DA3743;
+    border-radius: 30px;
+    font-family: 'lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    margin-right: -10%;
+    cursor: pointer;
+}

@@ -1,20 +1,22 @@
-﻿using FoodApp.BLL.Interface;
+﻿using AutoMapper;
+using FoodApp.BLL.Interface;
 using FoodApp.BLL.Models;
-using FoodApp.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 
 namespace FoodApp.MVC.Controllers
 {
+
     [AutoValidateAntiforgeryToken]
     public class MenuController : Controller
     {
         private readonly IMenuOperations _menuOperations;
+        private readonly IMapper _mapper;
 
-        public MenuController(IMenuOperations menuOperations)
+        public MenuController(IMenuOperations menuOperations, IMapper mapper)
         {
             _menuOperations = menuOperations;
+            _mapper = mapper;
         }
 
         public async Task<IActionResult> Index(string MenuTypes, string searchString)
@@ -25,37 +27,32 @@ namespace FoodApp.MVC.Controllers
 
         public IActionResult New()
         {
-            return View(new AddFoodItemVM());
+            ViewBag.SuccessMsg = TempData["SuccessMsg"];
+            return View(new MenuVM());
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> Save(AddFoodItemVM model)
+        public async Task<IActionResult> Save(MenuVM model)
         {
-
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
-                var (IsSuccessful, message)  = await _menuOperations.AddFoodItemAsync(model);
-
-                if (IsSuccessful)
-                {
-
-                    TempData["SuccessMsg"] = message;
-
-                    return RedirectToAction("Index");
-                }
-
-                //ViewBag.ErrMsg = message;
-
-
                 return View("New");
-
             }
 
-            return View("New");
+            var (isSuccessful, message) = await _menuOperations.AddFoodItemAsync(model);
 
+            if (isSuccessful)
+            {
+                TempData["SuccessMsg"] = message;
+                return RedirectToAction("New");
+            }
+
+            ModelState.AddModelError(string.Empty, message);
+            return View("New");
         }
+
+
 
         public async Task<IActionResult> LearnMore(int id)
         {
@@ -63,67 +60,58 @@ namespace FoodApp.MVC.Controllers
             return View(model);
         }
 
-
-        public IActionResult EditFoodItem()
+        public async Task<IActionResult> EditFoodItem(int id)
         {
-            return View(new Menu());
+            var menu = await _menuOperations.GetFoodItemAsync(id);
+            if (menu == null)
+            {
+                return NotFound();
+            }
+
+            var model = _mapper.Map<MenuVM>(menu);
+            return View(model);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> SaveEditedItem(Menu model)
+
+        [HttpPost, ActionName("SaveEditedItem")]
+        public async Task<IActionResult> SaveEditedItemPost(MenuVM model)
         {
             if (ModelState.IsValid)
             {
-
-            var (IsSuccessful, message)  = await _menuOperations.EditFoodItemAsync(model);
-
-            if (IsSuccessful)
-            {
-
-                TempData["SuccessMsg"] = message;
-
-                
+                var (isSuccessful, message) = await _menuOperations.EditFoodItemAsync(model);
+                if (isSuccessful)
+                {
+                    TempData["SuccessMsg"] = message;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", message);
+                }
             }
-                return RedirectToAction("Index");
-                //ViewBag.ErrMsg = message;
-
-
-                //return View("EditFoodItem");
-
-            }
-            
-            return View("EditFoodItem");
-
+            return View("EditFoodItem", model);
         }
-        
-        public  async Task<IActionResult> Delete(int id)
+
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
         {
-            var response = _menuOperations.DeleteFoodItem(id);
-            return View(response);
+            var model = await _menuOperations.DeleteFoodItem(id);
+            return View(model);
         }
+
 
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (ModelState.IsValid)
             {
-
-                var model = await _menuOperations.DeleteFoodItem(id);
-
-                //return RedirectToAction("Index");
-                return View(model);
+                await _menuOperations.DeleteFoodItem(id);
+                return RedirectToAction("Index");
             }
 
             return View("Index");
-
         }
 
-        /*[HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(DeleteVM model)
-        {
-            await _menuOperations.DeleteFoodItem(model);
-           
-            return RedirectToAction(nameof(Index));
-        }*/
     }
 }

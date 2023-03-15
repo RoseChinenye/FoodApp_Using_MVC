@@ -25,28 +25,24 @@ namespace FoodApp.BLL.Implementation
             _menuRepo = _unitOfWork.GetRepository<Menu>();
         }
 
-        public async Task<(bool IsSuccessful, string message)> AddFoodItemAsync(AddFoodItemVM VisualModel)
+        public async Task<(bool IsSuccessful, string message)> AddFoodItemAsync(MenuVM VisualModel)
         {
-            Menu menu = await _menuRepo.GetSingleByAsync(a => a.Title == VisualModel.Title);
+            var existingMenu = await _menuRepo.GetSingleByAsync(a => a.Title == VisualModel.Title);
 
-            if (menu == null)
+            if (existingMenu != null)
             {
-                var newMenu = _mapper.Map<AddFoodItemVM, Menu>(VisualModel);
-                await _menuRepo.AddAsync(newMenu);
-
-                var rowChanges = await _unitOfWork.SaveChangesAsync();
-                return rowChanges > 0 ? (true, $"Item: {VisualModel.Title} was successfully added to the menu!") : (false, "Failed To save changes!");
-
+                return (false, $"Failed to add item: {VisualModel.Title}. Item already exists in the menu!");
             }
 
-            _mapper.Map(VisualModel, menu);
+            var newMenu = _mapper.Map<MenuVM, Menu>(VisualModel);
+            await _menuRepo.AddAsync(newMenu);
 
             await _unitOfWork.SaveChangesAsync();
-            return (true, "Update Successful!");
-
+            return (true, $"Item: {VisualModel.Title} was successfully added to the menu!");
         }
 
-        public async Task<Menu> DeleteFoodItem(int id)
+
+        public async Task<MenuVM> DeleteFoodItem(int id)
         {
             var menu = await _menuRepo.GetByIdAsync(id);
             if (menu != null)
@@ -54,14 +50,20 @@ namespace FoodApp.BLL.Implementation
                 await _menuRepo.DeleteAsync(menu);
                 await _unitOfWork.SaveChangesAsync();
 
-                return menu;
-            }
-            
-            throw new ArgumentNullException(nameof(_menuRepo), "Menu doesn't exist!");
+                var model = _mapper.Map<MenuVM>(menu);
+                return model;
 
+            }
+            return null;
         }
 
-        public async Task<(bool IsSuccessful, string message)> EditFoodItemAsync(Menu model)
+        public async Task<MenuVM> GetFoodItemAsync(int id)
+        {
+            var menu = await _menuRepo.GetByIdAsync(id);
+            return _mapper.Map<MenuVM>(menu);
+        }
+
+        public async Task<(bool IsSuccessful, string message)> EditFoodItemAsync(MenuVM model)
         {
             var menu = await _menuRepo.GetByIdAsync(model.Id);
 
@@ -78,7 +80,7 @@ namespace FoodApp.BLL.Implementation
             return (true, "Update Sucessfull!");
         }
 
-        public async Task<AddFoodItemVM> ViewFoodItemAsync(int? id)
+        public async Task<MenuVM> ViewFoodItemAsync(int? id)
         {
             var menu = await _menuRepo.GetByIdAsync(id);
 
@@ -87,7 +89,7 @@ namespace FoodApp.BLL.Implementation
                 return null;
             }
 
-            var foodItems = _mapper.Map<Menu>(menu); 
+            var foodItems = _mapper.Map<MenuVM>(menu);
 
             return foodItems;
         }

@@ -8,7 +8,8 @@ namespace FoodApp.BLL.MappingProfiles
     {
         public MenuMappingProfile()
         {
-            CreateMap<AddFoodItemVM, Menu>();                                                                                                                                               
+            CreateMap<MenuVM, Menu>();
+            CreateMap<Menu, MenuVM>(); 
         }
     }
 }
