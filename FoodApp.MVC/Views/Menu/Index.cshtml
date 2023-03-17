@@ -4,22 +4,30 @@
     ViewData["Title"] = "Menu";
 }
 
-<h1>Menu</h1>
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Food Menu</h2>
+            </div>
+            <div class="col-12">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-controller="Menu" asp-action="New">Add Meal</a>
+                <p></p>
+                <form asp-controller="Menu" asp-action="Index" method="get">
 
-<p>
-    <a asp-controller="Menu" asp-action="New">Add Meal to Menu</a>
-</p>
+                    <p>
+                        <input type="text" placeholder="Title" asp-for="SearchString" style="padding: 10px; border: 2px solid #ccc; border-radius: 4px; font-size: 16px; width: 200px;">
+                        <input type="submit" value="Search" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
 
-<form asp-controller="Menu" asp-action="Index" method="get">
-    <p>
-        Title: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Search" />
-
-    
-        <a asp-controller="Menu" asp-action="New">Add Meal to Menu</a>
-    
-    </p>
-</form>
 
 <table class="table">
     <thead>
@@ -62,11 +70,13 @@
                     @Html.DisplayFor(modelItem => item.Picture)
                 </td>
                 <td>
-                    <a asp-action="EditFoodItem" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="LearnMore" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="EditFoodItem" asp-route-id="@item.Id" class="carousel-btn"><i class="fa fa-edit"></i></a> |
+                    <a asp-action="LearnMore" asp-route-id="@item.Id" class="carousel-btn"><i class="fa fa-info"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="carousel-btn"><i class="fa fa-trash"></i></a> 
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+

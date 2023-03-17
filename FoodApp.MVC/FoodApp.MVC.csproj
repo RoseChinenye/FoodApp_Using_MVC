@@ -25,4 +25,23 @@
     <Folder Include="Views\Home\images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\lib\easing\easing.js" />
+    <None Include="wwwroot\lib\easing\easing.min.js" />
+    <None Include="wwwroot\lib\flaticon\font\Flaticon.svg" />
+    <None Include="wwwroot\lib\flaticon\font\Flaticon.woff2" />
+    <None Include="wwwroot\lib\flaticon\font\_flaticon.scss" />
+    <None Include="wwwroot\lib\flaticon\license\license.pdf" />
+    <None Include="wwwroot\lib\owlcarousel\LICENSE" />
+    <None Include="wwwroot\lib\owlcarousel\owl.carousel.js" />
+    <None Include="wwwroot\lib\owlcarousel\owl.carousel.min.js" />
+    <None Include="wwwroot\lib\tempusdominus\js\moment-timezone.min.js" />
+    <None Include="wwwroot\lib\tempusdominus\js\moment.min.js" />
+    <None Include="wwwroot\lib\tempusdominus\js\tempusdominus-bootstrap-4.js" />
+    <None Include="wwwroot\lib\tempusdominus\js\tempusdominus-bootstrap-4.min.js" />
+    <None Include="wwwroot\mail\contact.js" />
+    <None Include="wwwroot\mail\contact.php" />
+    <None Include="wwwroot\mail\jqBootstrapValidation.min.js" />
+  </ItemGroup>
+
 </Project>

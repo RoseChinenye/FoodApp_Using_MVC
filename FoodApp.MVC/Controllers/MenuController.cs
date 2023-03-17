@@ -25,6 +25,9 @@ namespace FoodApp.MVC.Controllers
             return View(viewMenuVM);
         }
 
+        
+
+        [HttpGet]
         public IActionResult New()
         {
             ViewBag.SuccessMsg = TempData["SuccessMsg"];
@@ -53,7 +56,6 @@ namespace FoodApp.MVC.Controllers
         }
 
 
-
         public async Task<IActionResult> LearnMore(int id)
         {
             var model = await _menuOperations.ViewFoodItemAsync(id);
@@ -62,6 +64,7 @@ namespace FoodApp.MVC.Controllers
 
         public async Task<IActionResult> EditFoodItem(int id)
         {
+            ViewBag.SuccessMsg = TempData["SuccessMsg"];
             var menu = await _menuOperations.GetFoodItemAsync(id);
             if (menu == null)
             {
@@ -86,7 +89,7 @@ namespace FoodApp.MVC.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", message);
+                    ModelState.AddModelError(string.Empty, message);
                 }
             }
             return View("EditFoodItem", model);

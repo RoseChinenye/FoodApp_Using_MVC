@@ -1,6 +1,4 @@
-/*******************************/
-/********* General CSS *********/
-/*******************************/
+
 body {
     color: #757575;
     background: #ffffff;
@@ -370,7 +368,7 @@ a:focus {
     margin-bottom: 45px;
     padding: 150px 0 90px 0;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/page-header.jpg);
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../images/page-header.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -464,84 +462,6 @@ a:focus {
     }
 }
 
-
-/*******************************/
-/********* Booking CSS *********/
-/*******************************/
-.booking {
-    position: relative;
-    width: 100%;
-    margin-bottom: 45px;
-    background: rgba(0, 0, 0, .04);
-}
-
-.booking .booking-content {
-    padding: 45px 0 15px 0;
-}
-
-.booking .booking-content .section-header {
-    margin-bottom: 30px;
-}
-
-.booking .booking-form {
-    padding: 60px 30px;
-    background: #fbaf32;
-}
-
-.booking .booking-form .control-group {
-    margin-bottom: 15px;
-}
-
-.booking .booking-form .input-group-text {
-    position: absolute;
-    padding: 0;
-    border: none;
-    background: none;
-    top: 15px;
-    right: 15px;
-    color: #ffffff;
-    font-size: 14px;
-}
-
-.booking .booking-form .form-control {
-    height: 45px;
-    font-size: 14px;
-    color: #ffffff;
-    padding: 0 15px;
-    border-radius: 5px !important;
-    border: 1px solid #ffffff;
-    background: transparent;
-}
-
-.booking .booking-form select.form-control {
-    padding: 0 10px;
-}
-
-.booking .booking-form .form-control::placeholder {
-    color: #ffffff;
-    opacity: 1;
-}
-
-.booking .booking-form .form-control:-ms-input-placeholder,
-.booking .booking-form .form-control::-ms-input-placeholder {
-    color: #ffffff;
-}
-
-.booking .booking-form .input-group [data-toggle="datetimepicker"] {
-    cursor: default;
-}
-
-.booking .booking-form .btn.custom-btn {
-    width: 100%;
-    color: #fbaf32;
-    background: #ffffff;
-    border: 1px solid #ffffff;
-}
-
-.booking .booking-form .btn.custom-btn:hover {
-    color: #ffffff;
-    background: transparent;
-}
 
 
 /*******************************/
@@ -1189,109 +1109,6 @@ a:focus {
 
 .testimonial .owl-dot.active {
     background: #719a0a;
-}
-
-
-/*******************************/
-/*********** Blog CSS **********/
-/*******************************/
-.blog {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 0 0;
-}
-
-.blog .blog-item {
-    position: relative;
-}
-
-.blog .blog-img {
-    position: relative;
-    width: 100%;
-    border-radius: 15px;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.blog .blog-img img {
-    width: 100%;
-}
-
-.blog .blog-content {
-    position: relative;
-    width: calc(100% - 60px);
-    top: -60px;
-    left: 30px;
-    padding: 25px 30px 30px 30px;
-    background: #ffffff;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-    border-radius: 15px;
-    z-index: 2;
-}
-
-.blog .blog-content h2.blog-title {
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.blog .blog-meta {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-}
-
-.blog .blog-meta p {
-    margin: 0 10px 0 0;
-    font-size: 14px;
-    color: #999999;
-}
-
-.blog .blog-meta i {
-    color: #fbaf32;
-    margin-right: 5px;
-}
-
-.blog .blog-meta p:last-child {
-    margin: 0;
-}
-
-.blog .blog-text {
-    position: relative;
-}
-
-.blog .blog-text p {
-    margin-bottom: 10px;
-}
-
-.blog .blog-item a.btn {
-    margin-top: 10px;
-    padding: 5px 15px;
-}
-
-.blog .pagination .page-link {
-    color: #fbaf32;
-    border-radius: 5px;
-    border-color: #fbaf32;
-    margin: 0 2px;
-}
-
-.blog .pagination .page-link:hover,
-.blog .pagination .page-item.active .page-link {
-    color: #ffffff;
-    background: #fbaf32;
-}
-
-.blog .pagination .disabled .page-link {
-    color: #999999;
-}
-
-@media(max-width: 575.98px){
-    .blog .blog-meta p {
-        flex: 50%;
-        font-size: 13px;
-        margin: 0 0 5px 0;
-    }
 }
 
 

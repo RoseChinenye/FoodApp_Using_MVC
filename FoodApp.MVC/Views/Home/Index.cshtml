@@ -1,344 +1,460 @@
-﻿@*@{
+﻿@model FoodApp.BLL.Models.ViewMenuVM
+
+@{
     ViewData["Title"] = "Tachie nke bu Osa";
 }
-
-<body>
-
-    <section>
-        <!-- Beginning of description-section -->
-
-        <div class="description-section">
-            <h1>Delicious meals at your convenience</h1>
-            <p>Order your meals from us and we will have it delivered at your doorstep.</p>
-
-            <div class="inst-orders">
-                <p>Instant Order</p>
-                <input type="text" name="search" class="search" 
-                placeholder="&#xF002; Search for meal" style="font-family: Arial, FontAwesome"/>
-            </div>
-
-            <button>Get Started</button>
-            <img src="~/images/image1.png" alt="Jellof Rice with Chicken" asp-append-version="true"/>
-            <a href="#"><i class="fas fa-sms"></i></a>
-        </div>
-
-        <!-- End of description-section -->
-
-        <!-- Beginning of menu-section -->
-        <div class="menu-section">
-            <div class="menu-head">
-                <h3>MENU</h3>
-                <p>Current Menu</p>
-                <ul class="menu-categories">
-                    <a href="#"><li>All</li></a>
-                    <a href="#"><li>Rice</li></a>
-                    <a href="#"><li>Beans</li></a>
-                    <a href="#"><li>Fries</li></a>
-                    <a href="#"><li>Swallow</li></a>
-                    <a href="#"><li>Others</li></a>
-                </ul>
-            </div>
-            <div class="menus">
-
-                <div class="menu-column">
-                    <div class="single-menu">
-                        <img src="images/image2.png" alt="Jellof rice">
-                        <div class="menu-content">
-                            <h5>Jellof Rice and Chicken</h5>
-                            <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
-                            <h4> ₦ 1,500 <span class="carts">
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </span></h4>
-                        </div>
+    <!-- Carousel Start -->
+    <div class="carousel">
+        <div class="container-fluid">
+            <div class="owl-carousel">
+                <div class="carousel-item">
+                    <div class="carousel-img">
+                        <img src="~/images/image1.png" alt="Image">
                     </div>
-
-                <div class="single-menu">
-                        <img src="images/image5.png" alt="Swallow with Egusi Soup">
-                        <div class="menu-content">
-                            <h5>Swallow with Egusi Soup</h5>
-                            <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
-                            <h4> ₦ 1000 <span class="carts">
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </span></h4>
+                    <div class="carousel-text">
+                        <h1>Best <span>Quality</span> Ingredients</h1>
+                        <p>
+                        We serve foods rich in Protein, Vitamins, Energy-giving and Less Calories. Our ingredients are naturally made and contains lesser preservatives.  
+                        </p>
+                        <div class="carousel-btn">
+                            <a class="btn custom-btn" asp-page="/Views/Home/Index.cshtml" asp-fragment="Menu">View Menu</a>
+                            <a class="btn custom-btn" asp-page="/Views/Home/Index.cshtml" asp-fragment="Contact">Contact Us</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="menu-column">
-                    <div class="single-menu">
-                            <img src="images/image3.png" alt="Swallow with Draw Soup">
-                            <div class="menu-content">
-                                <h5>Swallow with Draw Soup</h5>
-                                <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
-                                <h4> ₦ 1000 <span class="carts">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                </span></h4>
-                            </div>
-                        </div>
-
-                    <div class="single-menu">
-                        <img src="images/image6.png" alt="Beans">
-                        <div class="menu-content">
-                            <h5>Beans</h5>
-                            <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
-                            <h4> ₦ 700 <span class="carts">
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </span></h4>
-                        </div>
-                        </div>
-                </div>
-
-                <div class="menu-column">
-                    <div class="single-menu">
-                            <img src="images/image4.png" alt="Fries with Egg Sauce">
-                            <div class="menu-content">
-                                <h5>Fries with Egg Sauce</h5>
-                                <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
-                                <h4> ₦ 1,500 <span class="carts">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                </span></h4>
-                            </div>
-                        </div>
-
-                    <div class="single-menu">
-                            <img src="images/image7.png" alt="Fried Rice">
-                            <div class="menu-content">
-                                <h5>Fried Rice</h5>
-                                <p>Fried potato/yam chips with egg sauce or any topping of your choice</p>
-                                <h4> ₦ 600 <span class="carts">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                </span></h4>
-                            </div>
-                        </div>
-
+                <div class="carousel-item">
+                    <div class="carousel-img">
+                        <img src="~/images/carousel-2.jpg" alt="Image">
                     </div>
-
-                </div>
-                <center>
-                <button>Full Menu</button>
-                </center>
-            </div>
-
-            <!-- End of Menu-section -->
-
-            <!-- Beginning of testimonial-section -->
-            <div class="testimonial-section">
-                <div class="section-description">
-                    <h3>What our customers say about us</h3>
-                    <p>At vero eos et accusamus et iusto odio 
-                        dignissimos ducimus qui blanditiis 
-                        praesentium voluptatum.
-                    </p>
-                </div>
-
-                <div class="testimonials">
-                    <span class="quote">,,</span>
-                <div class="left-content">
-                    <div class="img-area">
-                            <img src="images/John.png" alt="john Samson">
+                    <div class="carousel-text">
+                        <h1>World’s <span>Best</span> Chef</h1>
+                        <p>
+                        Our Chefs are World Class! Well trained in top universities in Nigeria in Food and Nutrition.    
+                        </p>
+                        <div class="carousel-btn">
+                            <a class="btn custom-btn" asp-page="/Views/Home/Index.cshtml" asp-fragment="Menu">View Menu</a>
+                        <a class="btn custom-btn" asp-page="/Views/Home/Index.cshtml" asp-fragment="Contact">Contact Us</a>
                         </div>
-                        <div class="text-area">
-                            <div class="name">
-                                <h2>John Samson</h2>
-                            </div>
-
-                            <h3>Enugu, Nigeria</h3>
-                        </div>
+                    </div>
                 </div>
-                <div class="right-content">
-
-                    <p>White dwarf a still more glorious dawn awaits tingling 
-                        of the spine emerged into consciousness Vangelis shores 
-                        of the cosmic ocean. 
-                        Tendrils of gossamer clouds kindling the energy hidden 
-                        in matter concept of the number one permanence.
-                    </p>
+                <div class="carousel-item">
+                    <div class="carousel-img">
+                        <img src="~/images/carousel-3.jpg" alt="Image">
+                    </div>
+                    <div class="carousel-text">
+                        <h1>Fastest Order <span>Delivery</span></h1>
+                        <p>
+                        We deliever fast and quick. For you Home Delivery, Contact us.    
+                        </p>
+                        <div class="carousel-btn">
+                            <a class="btn custom-btn" asp-page="/Views/Home/Index.cshtml" asp-fragment="Menu">View Menu</a>
+                        <a class="btn custom-btn" asp-page="/Views/Home/Index.cshtml" asp-fragment="Contact">Contact Us</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="testimonials">
-                <span class="quote">,,</span>
-            <div class="left-content">
-                <div class="img-area">
-                        <img src="images/John.png" alt="Rose Newton">
-                    </div>
-                    <div class="text-area">
-                        <div class="name">
-                            <h2>Rose Newton</h2>
-                        </div>
-
-                        <h3>Port Harcourt, Nigeria</h3>
-                    </div>
-            </div>
-            <div class="right-content">
-
-                <p>White dwarf a still more glorious dawn awaits tingling 
-                    of the spine emerged into consciousness Vangelis shores 
-                    of the cosmic ocean. 
-                </p>
-            </div>
-        </div>
-        <div class="testimonials">
-            <span class="quote">,,</span>
-        <div class="left-content">
-            <div class="img-area">
-                    <img src="images/John.png" alt="Glad Johnson">
-                </div>
-                <div class="text-area">
-                    <div class="name">
-                        <h2>Glad Johnson</h2>
-                    </div>
-
-                    <h3>Asaba, Nigeria</h3>
-                </div>
-        </div>
-        <div class="right-content">
-
-            <p>White dwarf a still more glorious dawn awaits tingling 
-                of the spine emerged into consciousness Vangelis shores 
-                of the cosmic ocean. 
-                Tendrils of gossamer clouds kindling the energy hidden 
-                in matter concept of the number one permanence.
-            </p>
         </div>
     </div>
-
-    <div class="testimonials">
-            <span class="quote">,,</span>
-        <div class="left-content">
-            <div class="img-area">
-                    <img src="images/John.png" alt="Ifeanyi Ezeobi">
-                </div>
-                <div class="text-area">
-                    <div class="name">
-                        <h2>Ifeanyi Ezeobi</h2>
+    <!-- Carousel End -->
+    
+    <!-- Feature Start -->
+    <div class="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-header">
+                        <p>Why Choose Us</p>
+                        <h2>Our Key Features</h2>
                     </div>
-
-                    <h3>Anambra, Nigeria</h3>
-                </div>
-        </div>
-        <div class="right-content">
-
-            <p>
-                Tendrils of gossamer clouds kindling the energy hidden 
-                in matter concept of the number one permanence.
-                Tendrils of gossamer clouds kindling the energy hidden 
-                in matter concept of the number one permanence.
-            </p>
-        </div>
-    </div>
-    <div class="testimonials">
-            <span class="quote">,,</span>
-        <div class="left-content">
-            <div class="img-area">
-                    <img src="images/John.png" alt="Okon Benson">
-                </div>
-                <div class="text-area">
-                    <div class="name">
-                        <h2>Okon Benson</h2>
-                    </div>
-
-                    <h3>Lagos, Nigeria</h3>
-                </div>
-        </div>
-        <div class="right-content">
-
-            <p>White dwarf a still more glorious dawn awaits tingling 
-                of the spine emerged into consciousness Vangelis shores 
-                of the cosmic ocean. 
-            </p>
-        </div>
-    </div>
-
-                <div class="all-dots">
-                <span class="dots" onclick="activeSlide(1)"></span>
-                <span class="dots" onclick="activeSlide(2)"></span>
-                <span class="dots" onclick="activeSlide(3)"></span>
-                <span class="dots" onclick="activeSlide(4)"></span>
-                <span class="dots" onclick="activeSlide(5)"></span>
-                </div>
-
-
-            </div>
-            <!-- End of description-section -->
-
-            <!-- Beginning of blog-section -->
-
-            <div class="blog-section">
-                <div class="section-title">
-                    <center>
-                    <h2>Blog Our Latest News</h2>
-                    </center>
-                    <p>Have you ever browsed food blogs 
-                        like mine and wondered how to start 
-                        a food blog of your very own? 
-                    </p>
-                </div>
-
-                <div class="blogs">
-
-                    <div class="blogs-column">
-
-                        <div class="blog-img">
-                            <img src="images/image8.png" alt="Pao Chicken">
-                        </div>
-                        <div class="blog-content">
-                            <div class="content-title">
-                                <span class="category">Design</span>
-                                <span class="date">01 October 2019</span>
-                            </div>
-                            <h5>Better Than Takeout Kung Pao Chicken</h5>
-                            <p>This spicy, tangy, and sweet better than takeout 
-                                no peanut kung pao chicken stir fry recipe 
-                            </p>
-                            <a href="#">READ MORE</a>
-                        </div>
-
-                    </div>
-
-                    <div class="blogs-column">
-
-                        <div class="blog-img">
-                            <img src="images/image9.png" alt="Broccoli Salad">
-                        </div>
-                        <div class="blog-content">
-                            <div class="content-title">
-                                <span class="category">Design</span>
-                                <span class="date">01 October 2019</span>
-                            </div>
-                            <h5>The Best Sesame Soy Broccoli Salad</h5>
-                            <p>Hello broccoli salad! Broccoli salad with a sweet and 
-                                tangy dressing is my new go to for summer parties. 
-                            </p>
-                            <a href="#">READ MORE</a>
-                        </div>
-
-                    </div>
-
-                        <div class="blogs-column">
-
-                            <div class="blog-img">
-                                <img src="images/image10.png" alt="Pao Chicken" class="last-img">
-                            </div>
-                            <div class="blog-content">
-                                <div class="content-title">
-                                    <span class="category">Design</span>
-                                    <span class="date">01 October 2019</span>
+                    <div class="feature-text">
+                        <div class="feature-img">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="~/images/feature-1.jpg" alt="Image">
                                 </div>
-                                <h5>Better Than Takeout Kung Pao Chicken</h5>
-                                <p>This super easy version of dan dan noodles is fast, 
-                                    flavorful, and vegetarian to boot. It’s definitely  
-                                </p>
-                                <a href="#">READ MORE</a>
+                                <div class="col-6">
+                                    <img src="~/images/feature-2.jpg" alt="Image">
+                                </div>
+                                <div class="col-6">
+                                    <img src="~/images/feature-3.jpg" alt="Image">
+                                </div>
+                                <div class="col-6">
+                                    <img src="~/images/feature-4.jpg" alt="Image">
+                                </div>
                             </div>
-
                         </div>
-
+                        <p>
+                        We serve foods rich in Protein, Vitamins, Energy-giving and Less Calories. Our ingredients are naturally made and contains lesser preservatives.
+                        Our Chefs are World Class! Well trained in top universities in Nigeria in Food and Nutrition.
+                        We deliever fast and quick. For you Home Delivery, Contact us.
+                    </p>
+                    <a class="btn custom-btn" asp-page="/Views/Home/Index.cshtml" asp-fragment="Contact">Contact Us</a>
+                    </div>
                 </div>
-
-
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-cooking"></i>
+                                <h3>World’s best Chef</h3>
+                                <p>
+                                Our Chefs are World Class! Well trained in top universities in Nigeria in Food and Nutrition.
+                            </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-vegetable"></i>
+                                <h3>Natural ingredients</h3>
+                                <p>
+                                We serve foods rich in Protein, Vitamins, Energy-giving and Less Calories. Our ingredients are naturally made and contains lesser preservatives.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-medal"></i>
+                                <h3>Best quality products</h3>
+                                <p>
+                                We serve foods rich in Protein, Vitamins, Energy-giving and Less Calories. Our ingredients are naturally made and contains lesser preservatives.
+                            </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-meat"></i>
+                                <h3>Fresh vegetables & Meat</h3>
+                                <p>
+                                Fresh Vegetables and Meat Highly rich in Vitamins and less calories.    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-courier"></i>
+                                <h3>Fastest door delivery</h3>
+                                <p>
+                                We deliever fast and quick. For you Home Delivery, Contact us.   
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-item">
+                                <i class="flaticon-fruits-and-vegetables"></i>
+                                <h3>Ground beef & Low fat</h3>
+                                <p>
+                                   Best quality and soft ground beef with low fat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+        </div>
+    </div>
+    <!-- Feature End -->
+    
+    <!-- Menu Start -->
+    <section id="Menu">
+    <div class="menu">
+        <div class="container">
+            <div class="section-header text-center">
+                <p>Food Menu</p>
+                <h2>Delicious Food Menu</h2>
+            </div>
+            <div class="menu-tab">
+                <ul class="nav nav-pills justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#FastFood">Fast Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#snacks">Snacks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#beverages">Beverages</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="FastFood" class="container tab-pane active">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-12">
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/image2.png" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Party Jellof Rice</span> <strong>N2500</strong></h3>
+                                        <p>Delicious Party Jellof Rice and Chicken, specially garnished for you.</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/image3.png" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Ogbono Soup with Semo</span> <strong>N2000</strong></h3>
+                                        <p>Specially made Ogbono Soup with soft fufu.</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/image4.png" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Fried Yam with Egg Sauce</span> <strong>N1000</strong></h3>
+                                        <p>Spicy Egg Sauce with Fried Yam</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/image5.png" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                            <h3><span>Swallow With Egusi Soup</span> <strong>N2500</strong></h3>
+                                            <p>Specially made Egusi Soup with soft garri</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/image6.png" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Beans and Plaintain</span> <strong>N800</strong></h3>
+                                        <p>Delicious and Oily Beans and Plaintain</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <img src="~/images/image7.png" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="snacks" class="container tab-pane fade">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-12">
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/menu-snack.jpg" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Corn Tikki - Spicy fried Aloo</span> <strong>$15.00</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/menu-snack.jpg" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Bread besan Toast</span> <strong>$35.00</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/menu-snack.jpg" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Healthy soya nugget snacks</span> <strong>$20.00</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/menu-snack.jpg" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Tandoori Soya Chunks</span> <strong>$30.00</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <img src="~/images/menu-snack-img.jpg" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="beverages" class="container tab-pane fade">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-12">
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/menu-beverage.jpg" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Single Cup Brew</span> <strong>$7.00</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/menu-beverage.jpg" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Caffe Americano</span> <strong>$9.00</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/menu-beverage.jpg" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Caramel Macchiato</span> <strong>$15.00</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/menu-beverage.jpg" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Standard black coffee</span> <strong>$8.00</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    </div>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="menu-img">
+                                        <img src="~/images/menu-beverage.jpg" alt="Image">
+                                    </div>
+                                    <div class="menu-text">
+                                        <h3><span>Standard black coffee</span> <strong>$12.00</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <img src="~/images/menu-beverage-img.jpg" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </section>
-   
-</body>
-*@
+    <!-- Menu End -->
+    
+      
+    <!-- Testimonial Start -->
+    <div class="testimonial">
+        <div class="container">
+            <div class="owl-carousel testimonials-carousel">
+                <div class="testimonial-item">
+                    <div class="testimonial-img">
+                        <img src="~/images/testimonial-1.jpg" alt="Image">
+                    </div>
+                    <p>
+                        Tachie Nke bu Osa Restaurant is the best ever here in Enugu. Trust them for great quality foods.
+                    </p>
+                    <h2>Amaka</h2>
+                    <h3>Software Engineer</h3>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-img">
+                        <img src="~/images/testimonial-2.jpg" alt="Image">
+                    </div>
+                    <p>
+                        I recommend them for their fast home delivery. Well prepared and delicious food always.
+                    </p>
+                    <h2>Joshua</h2>
+                    <h3>Doctor</h3>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-img">
+                        <img src="~/images/testimonial-3.jpg" alt="Image">
+                    </div>
+                    <p>
+                        Highly trained chefs working at Tachie Nke bu Osa Restaurant are world class. I highly recommend.
+                    </p>
+                    <h2>Stan Nze</h2>
+                    <h3>SA to Governor</h3>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-img">
+                        <img src="~/images/testimonial-4.jpg" alt="Image">
+                    </div>
+                    <p>
+                        I trust them when it comes to serving well prepared and chilled beverages
+                    </p>
+                    <h2>Pastor Kendrick</h2>
+                    <h3>WTC Church, Enugu</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+    <!-- Contact Start -->
+    <section id="Contact">
+    <div class="contact">
+        <div class="container">
+            <div class="section-header text-center">
+                <p>Contact Us</p>
+                <h2>Contact For Your Order and Enquiry</h2>
+            </div>
+            <div class="row align-items-center contact-information">
+                <div class="col-md-6 col-lg-3">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fa fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Address</h3>
+                            <p>51 Monaque, Ugwuaji, Enugu.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fa fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Call Us</h3>
+                            <p>+234 907 168 8547</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email Us</h3>
+                            <p>TachieOsa@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fa fa-share"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Follow Us</h3>
+                            <div class="contact-social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </section>
+    <!-- Contact End -->
+    
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
