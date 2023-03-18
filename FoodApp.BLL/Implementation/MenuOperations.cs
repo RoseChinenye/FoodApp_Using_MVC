@@ -37,7 +37,7 @@ namespace FoodApp.BLL.Implementation
             var newMenu = _mapper.Map<MenuVM, Menu>(VisualModel);
             await _menuRepo.AddAsync(newMenu);
 
-            await _unitOfWork.SaveChangesAsync();
+            //await _unitOfWork.SaveChangesAsync();
             return (true, $"Item: {VisualModel.Title} was successfully added to the menu!");
         }
 
@@ -48,7 +48,7 @@ namespace FoodApp.BLL.Implementation
             if (menu != null)
             {
                 await _menuRepo.DeleteAsync(menu);
-                await _unitOfWork.SaveChangesAsync();
+                //await _unitOfWork.SaveChangesAsync();
 
                 var model = _mapper.Map<MenuVM>(menu);
                 return model;
@@ -75,7 +75,7 @@ namespace FoodApp.BLL.Implementation
             var newMenu = _mapper.Map(model, menu);
 
             await _menuRepo.UpdateAsync(newMenu);
-            await _unitOfWork.SaveChangesAsync();
+           // await _unitOfWork.SaveChangesAsync();
 
             return (true, "Update Sucessfull!");
         }

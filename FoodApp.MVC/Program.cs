@@ -1,10 +1,10 @@
-using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 using FoodApp.BLL.Implementation;
 using FoodApp.BLL.Interface;
 using FoodApp.DAL.Entities;
 using FoodApp.DAL.Repository;
 using FoodApp.DAL.Seeds;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 
 namespace FoodApp.MVC
@@ -30,7 +30,7 @@ namespace FoodApp.MVC
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork<FoodAppDbContext>>();
             builder.Services.AddScoped<IMenuOperations, MenuOperations>();//todo: show other life-cycles
             builder.Services.AddAutoMapper(Assembly.Load("FoodApp.BLL"));
-           
+
 
 
             var app = builder.Build();

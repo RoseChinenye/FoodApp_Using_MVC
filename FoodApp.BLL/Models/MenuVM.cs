@@ -1,6 +1,5 @@
-﻿
-
-using FoodApp.DAL.Entities;
+﻿using FoodApp.DAL.Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace FoodApp.BLL.Models
 {

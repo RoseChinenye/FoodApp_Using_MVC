@@ -17,6 +17,7 @@ namespace FoodApp.MVC.Controllers
         {
             _menuOperations = menuOperations;
             _mapper = mapper;
+           
         }
 
         public async Task<IActionResult> Index(string MenuTypes, string searchString)
@@ -42,13 +43,14 @@ namespace FoodApp.MVC.Controllers
             {
                 return View("New");
             }
+            
 
             var (isSuccessful, message) = await _menuOperations.AddFoodItemAsync(model);
 
             if (isSuccessful)
             {
                 TempData["SuccessMsg"] = message;
-                return RedirectToAction("New");
+                return RedirectToAction("New"); 
             }
 
             ModelState.AddModelError(string.Empty, message);

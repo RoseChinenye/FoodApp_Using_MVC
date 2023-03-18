@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Home\images\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
   <ItemGroup>
